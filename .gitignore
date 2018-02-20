@@ -1,0 +1,13 @@
+*.pyc
+*.pyo
+*.db
+.DS_Store
+.coverage
+local_settings.py
+frontend/node_modules
+frontend/build
+env/
+fabfile.py
+public_html
+.idea/
+deploy/

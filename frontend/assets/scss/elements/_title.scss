@@ -1,0 +1,48 @@
+.title{
+    color: $red;
+    font-family: $panton;
+    font-size: 35px;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-top: 0;
+
+    &-center{
+
+        &:before {
+            background: url("../../images/icon-title-left.png") no-repeat center;
+            width: 83px;
+            height: 24px;
+            content: " ";
+            display: inline-block;
+            margin-right: 27px;
+        }
+
+        &:after {
+            background: url("../../images/icon-title-right.png") no-repeat center;
+            display: inline-block;
+            width: 83px;
+            height: 24px;
+            content: " ";
+            margin-left: 27px;
+        }
+
+    }
+
+    &-left{
+        margin-bottom: 15px;
+        &:after {
+            background: url("../../images/icon-title-right.png") no-repeat center;
+            display: inline-block;
+            width: 83px;
+            height: 24px;
+            content: " ";
+            margin-left: 27px;
+        }
+
+        &+p{
+            margin-top: 0;
+        }
+    }
+}

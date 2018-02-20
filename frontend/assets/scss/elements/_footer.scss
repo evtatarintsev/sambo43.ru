@@ -1,0 +1,41 @@
+.footer{
+    height: 190px;
+    margin-top: -190px;
+
+    &__info{
+        height: 130px;
+        @include centered;
+        font-size: 14px;
+        font-family: $roboto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__fill{
+            flex-grow: 1;
+        }
+
+        &__logo{
+            float: left;
+        }
+
+        &__contacts{
+            width: 240px;
+            text-align: right;
+
+        }
+
+        &__copyright{
+
+        }
+
+        a{
+            color: $blue;
+            text-decoration: none;
+        }
+    }
+
+    &__logo{
+
+    }
+}

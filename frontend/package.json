@@ -1,0 +1,47 @@
+{
+  "name": "sambo",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@types/jquery": "^2.0.41",
+    "air-datepicker": "^2.2.3",
+    "autoprefixer": "^6.7.7",
+    "autoprefixer-loader": "^3.2.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.0",
+    "babel-preset-env": "^1.2.1",
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap-sass-loader": "^1.0.10",
+    "bootstrap-webpack": "0.0.6",
+    "breakpoint-sass": "^2.7.1",
+    "css-loader": "^0.27.2",
+    "extract-loader": "^0.1.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.10.1",
+    "html-loader": "^0.4.5",
+    "jquery": "^3.1.1",
+    "jquery-ui": "^1.12.1",
+    "moment": "^2.18.1",
+    "node-sass": "^4.5.0",
+    "normalize-scss": "^6.0.0",
+    "postcss-loader": "^1.3.3",
+    "pug": "^2.0.0-rc.1",
+    "resolve-url-loader": "^2.0.2",
+    "sass-loader": "^6.0.3",
+    "slick-carousel": "^1.6.0",
+    "style-loader": "^0.13.2",
+    "tooltipster": "^4.2.3",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "scripts": {
+    "dev": "NODE_ENV='dev' webpack-dev-server --inline",
+    "build": "NODE_ENV='production' webpack -p",
+    "watch": "./node_modules/.bin/webpack"
+  },
+  "dependencies": {
+    "ng-infinite-scroll": "^1.3.0",
+    "object-assign": "^4.1.1",
+    "reset-css": "^2.2.0"
+  }
+}

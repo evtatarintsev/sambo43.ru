@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block meta %}
+    <title>{{ blog_post.meta_title }}</title>
+    <meta name="description" content="{{ blog_post.description }}">
+{% endblock %}
+
+
+{% block content %}
+<h1 class="page-header">{{ blog_post.title }}</h1>
+<div class="content">
+    {{ blog_post.content|safe }}
+</div>
+{% endblock %}
+
+
+{% block carousel %}
+{% endblock %}

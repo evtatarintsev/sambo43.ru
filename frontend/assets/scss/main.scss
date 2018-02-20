@@ -1,0 +1,22 @@
+//Vendor
+@import 'vendor/normalize';
+@import 'vendor/breakpoint';
+
+
+//Base
+@import 'base/vars';
+@import 'base/fonts';
+@import 'base/mixins';
+@import 'base/base';
+
+
+//Elements
+@import "elements/header";
+@import "elements/menu";
+@import "elements/footer";
+@import "elements/title";
+@import "elements/news";
+
+//Pages
+@import 'pages/main';
+@import "pages/photos";

@@ -1,0 +1,42 @@
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    height: 100%;
+    min-width: 320px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    background: white;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.layout{
+    min-height: 100%;
+    padding-bottom: 190px;
+    min-height: 100%;
+}
+
+.page-body{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+h1{
+    color: black;
+    font-family: $panton;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 20px;
+}

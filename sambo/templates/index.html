@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load static blog_tags %}
+
+
+{% block content %}
+    <section class="slider-main">
+        <div class="slider-main__list">
+            <img src="{% static "images/temp/slide1.png" %}" alt="" class="slider-main__item">
+        </div>
+    </section>
+    <section class="news__main">
+        <div class="title title-center">Новости</div>
+        <div class="news__list">
+            {% blog_recent_posts 3 as recent_posts %}
+
+            {% for post in recent_posts %}
+                <a class="news__item" href="{{ post.get_absolute_url }}">
+                    {% if post.featured_image %}
+                        <img src="{{ post.featured_image.url }}">
+                    {% else %}
+                        <img src="{% static "images/tmp/news/entry4.jpg" %}">
+                    {% endif %}
+
+                    <span class="news__description">
+                        {{ post.title }}
+                    </span>
+                </a>
+            {% endfor%}
+        </div>
+    </section>
+    <section class="main__about">
+        <div class="news__left">
+            <div class="news__item news__item-vertical">
+                <img src="{% static "images/temp/favorites1.png" %}" alt="">
+                <div class="news__description news__description-red news__description_text-center">
+                    <span class="news__description__title">Артем Осипенко</span>
+                    <span class="news__description__description">2 место в Первенстве ПФО по Cамбо</span>
+                    <span class="news__description__date">11.01.2017</span>
+                </div>
+            </div>
+        </div>
+        <div class="main__about__text">
+            <h1 class="title title-left">{{ page.homepage.content_title }}</h1>
+            {{ page.homepage.content|safe }}
+        </div>
+    </section>
+{% endblock content %}
