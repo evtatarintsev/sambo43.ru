@@ -22,10 +22,6 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.html$/i,
-                loader: "file-loader?name=[path][name].[ext]!extract-loader!html-loader",
-            },
-            {
                 test: /\.(jpg|png|svg)$/i,
                 loader: "file-loader?name=[path][name].[ext]",
             },
