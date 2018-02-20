@@ -1,0 +1,16 @@
+{% load pages_tags %}
+
+
+{% if page_branch %}
+    <nav class="menu">
+        <ul class="menu__list">
+            {% for page in page_branch %}
+                {% if page.in_menu %}
+                    <li class="menu__list__item">
+                        <a class="{% if page.is_current_or_ascendant %} _active{% endif %}" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}
