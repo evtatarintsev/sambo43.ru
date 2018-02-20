@@ -1,0 +1,18 @@
+{% load static thumbnail %}
+
+{% for post in posts %}
+    <a class="news__item" href="{{ post.get_absolute_url }}">
+        {% if post.featured_image %}
+            {% thumbnail post.featured_image "320x180" crop="center" as thumb %}
+            <img src="{{ thumb.url }}">
+        {% else %}
+            <img src="{% static "images/post_no_image_320x180.png" %}">
+        {% endif %}
+        <span class="news__title">
+            {{ post.title }}
+            <span class="news__title__description">
+                <p>{{ post.publish_date|date:"d E Y года" }}</p>
+                {#<p>{{ post.description_from_content|safe }}</p>#}
+        </span>
+    </a>
+{% endfor %}

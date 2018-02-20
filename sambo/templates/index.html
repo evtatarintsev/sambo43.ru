@@ -18,24 +18,7 @@
         <div class="news__list">
             {% blog_recent_posts 3 as recent_posts %}
 
-            {% for post in recent_posts %}
-                <a class="news__item" href="{{ post.get_absolute_url }}">
-                    {% if post.featured_image %}
-                        {% thumbnail post.featured_image.url 320 180 as thumb %}
-                        <img src="{{ MEDIA_URL }}{{ thumb }}">
-                    {% else %}
-                        <img src="{% static "images/post_no_image_320x180.png" %}">
-                    {% endif %}
-
-                    <span class="news__description">
-                        {{ post.title }}
-                        <span class="news__title__description">
-                            <p>{{ post.publish_date|date:"d E Y года" }}</p>
-        {#                    <p>{{ post.description_from_content|safe }}</p>#}
-                        </span>
-                    </span>
-                </a>
-            {% endfor%}
+            {% include "blog/recent_posts.html" with posts=recent_posts %}
         </div>
     </section>
     <section class="main__about">

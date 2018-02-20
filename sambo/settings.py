@@ -179,6 +179,8 @@ INSTALLED_APPS = (
     # 'mezzanine.accounts',
     # 'mezzanine.mobile',
 
+    'easy_thumbnails',
+
     'sambo.content_pages',
 )
 
