@@ -1,38 +1,29 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static mezzanine_tags %}
 
 {% block content %}
-<h1 class="page-header">Новости</h1>
-
-<div class="news-list">
-    {% for blog_post in blog_posts.object_list %}
-    <div class="news-list__item entry">
-        <a class="entry__picture" href="{{ blog_post.get_absolute_url }}">
+<section class="news__main">
+    <div class="title title-center">Новости</div>
+    <div class="news__list">
+        {% for blog_post in blog_posts.object_list %}
+        <a class="news__item" href="{{ blog_post.get_absolute_url }}">
             {% if blog_post.featured_image %}
-                <img src="{{ blog_post.featured_image.url }}">
+                {% thumbnail blog_post.featured_image.url 320 180 as thumb %}
+                <img src="{{ MEDIA_URL }}{{ thumb }}">
             {% else %}
-                <img src="{% static "img/tmp/news/entry4.jpg" %}">
+                <img src="{% static "images/post_no_image_320x180.png" %}">
             {% endif %}
+
+            <span class="news__title">
+                {{ blog_post.title }}
+                <span class="news__title__description">
+                    <p>{{ blog_post.publish_date|date:"d E Y года" }}</p>
+                </span>
+            </span>
         </a>
-      <div class="entry__descr">
-        <h2 class="entry__heading">{{ blog_post.title }}</h2>
-        <div class="entry__text">
-          {{ blog_post.description|safe }}
-        </div>
-        <div class="entry__more"><a href="{{ blog_post.get_absolute_url }}">Узнать детали</a></div>
-      </div>
-    </div>
-    {% endfor %}
-    <div class="pagination" style="text-align: center; font-family: 'Comic Sans MS'">
-        {% for page in blog_posts.visible_page_range %}
-            {% if blog_posts.number != page %}
-                <a class="btn" href="?page={{ page }}" style="font-family: 'Comic Sans MS'">{{ page }}</a>
-            {% else %}
-                <span class="btn" style="background-color: #666; font-family: 'Comic Sans MS'">{{ page }}</span>
-            {% endif %}
         {% endfor %}
     </div>
-</div>
+</section>
 {% endblock %}
 
 

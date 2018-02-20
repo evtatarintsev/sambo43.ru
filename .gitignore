@@ -11,3 +11,4 @@ fabfile.py
 public_html
 .idea/
 deploy/
+front_tmp/

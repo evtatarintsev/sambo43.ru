@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static mezzanine_tags %}
 
 
 
@@ -10,12 +10,59 @@
 
 
 {% block content %}
-<h1 class="page-header">{{ blog_post.title }}</h1>
-<div class="content">
-    {{ blog_post.content|safe }}
-</div>
-{% endblock %}
+<section class="news__main">
+    <div class="title title-center">Новости</div>
+    <div class="news__detail">
+        <h1>{{ blog_post.title|upper }}</h1>
+        <div class="news__detail__date">{{ blog_post.publish_date|date:"d E Y года" }}</div>
+        <div class="news__detail__text">
+            {% if blog_post.featured_image %}
+                <img src="{{ blog_post.featured_image.url }}">
+            {% endif %}
+            {{ blog_post.content|safe }}
+        </div>
+
+        <div class="news__detail__gallery">
+            <div class="news__detail__gallery__item">
+                <img src="../images/temp/news_detail_galery.png" alt="">
+            </div>
+            <div class="news__detail__gallery__item">
+                <img src="../images/temp/news_detail_galery.png" alt="">
+            </div>
+            <div class="news__detail__gallery__item">
+                <img src="../images/temp/news_detail_galery.png" alt="">
+            </div>
+            <div class="news__detail__gallery__item">
+                <img src="../images/temp/news_detail_galery.png" alt="">
+            </div>
+            <div class="news__detail__gallery__item">
+                <img src="../images/temp/news_detail_galery.png" alt="">
+            </div>
+            <div class="news__detail__gallery__item">
+                <img src="../images/temp/news_detail_galery.png" alt="">
+            </div>
+        </div>
+
+    </div>
 
 
-{% block carousel %}
+    <div class="news__list">
+        {% for post in blog_post.related_posts.all %}
+        <a class="news__item" href="{{ post.get_absolute_url }}">
+            {% if post.featured_image %}
+                {% thumbnail post.featured_image.url 320 180 as thumb %}
+                <img src="{{ MEDIA_URL }}{{ thumb }}">
+            {% else %}
+                <img src="{% static "images/post_no_image_320x180.png" %}">
+            {% endif %}
+            <span class="news__title">
+                {{ post.title }}
+                <span class="news__title__description">
+                    <p>{{ post.publish_date|date:"d E Y года" }}</p>
+{#                    <p>{{ post.description_from_content|safe }}</p>#}
+            </span>
+        </a>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}
