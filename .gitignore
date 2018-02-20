@@ -12,3 +12,5 @@ public_html
 .idea/
 deploy/
 front_tmp/
+frontend/npm-debug.log
+frontend/package-lock.json
