@@ -6,7 +6,11 @@
 {% block content %}
     <section class="slider-main">
         <div class="slider-main__list">
-            <img src="{% static "images/temp/slide1.png" %}" alt="" class="slider-main__item">
+            {% for slide in page.homepage.slider %}
+                {% if slide.link %}<a href="{{ slide.link }}">{% endif %}
+                <img src="{{ slide.image.url }}" alt="" class="slider-main__item">
+                {% if slide.link %}</a>{% endif %}
+            {% endfor %}
         </div>
     </section>
     <section class="news__main">
