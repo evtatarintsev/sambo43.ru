@@ -8,7 +8,7 @@
     <div class="photo__list">
         {% for image in page.gallery.images.all %}
         <a class="photo__item" href="{{ image.file.url }}">
-            {% thumbnail image.file "230x230" as thumb %}
+            {% thumbnail image.file "230x230" crop="center" as thumb %}
             <img src="{{ thumb.url }}">
         </a>
         {% endfor %}
