@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static thumbnail %}
+
+{% block content %}
+<section class="news__main">
+    <div class="title title-center">{{ page.title }}</div>
+    <div class="photo__list">
+        {% for gallery in gallery_list %}
+        <a class="photo__item photo__item-album" href="{{ gallery.get_absolute_url }}">
+            {% thumbnail gallery.cover.file "230x230" crop="center" as thumb %}
+            <img src="{{ thumb.url }}">
+            <span class="photo__item__title">
+                {{ gallery.title }}
+            </span>
+            <span class="photo__item__dates">{{ gallery.publish_date|date:"d E Y года" }}</span>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+

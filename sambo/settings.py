@@ -183,6 +183,7 @@ INSTALLED_APPS = (
 
     'sambo.content_pages',
     'sambo.stuff',
+    'sambo.media',
 )
 
 MIDDLEWARE_CLASSES = (

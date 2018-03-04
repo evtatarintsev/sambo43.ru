@@ -1,22 +1,25 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
+
 from mezzanine.core.admin import DisplayableAdmin
 
-from .models import Rank
-from .models import Person
+from .models import Gallery
+from .models import GalleryImage
 
 
-@admin.register(Rank)
-class RankAdmin(admin.ModelAdmin):
-    pass
+class GalleryImageInline(admin.TabularInline):
+    model = GalleryImage
+    extra = 1
 
 
-@admin.register(Person)
-class PersonAdmin(DisplayableAdmin):
-    list_display = ('title', 'rank', 'status')
+@admin.register(Gallery)
+class GalleryAdmin(DisplayableAdmin):
+    list_display = ('title', 'status')
+    inlines = (GalleryImageInline, )
+
     fieldsets = (
         (None, {
-            "fields": ["title", 'position', 'rank', 'photo', 'content'],
+            "fields": ["title", 'zip_import', ],
         }),
 
         (_("Meta data"), {
