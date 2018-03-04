@@ -18,6 +18,13 @@ class Rank(models.Model):
 
 
 class Person(Displayable):
+    POSITIONS = (
+        (0, _('Тренер')),
+        (10, _('Спортсмен')),
+        (20, _('Президент федерации')),
+        (30, _('Вице президент федерации')),
+    )
+    position = models.PositiveIntegerField(_('Должность'), default=0, choices=POSITIONS)
     rank = models.ForeignKey(Rank, verbose_name=_('Разряд'))
     photo = FileField(_('Фото'), format='Image', upload_to='stuff')
     content = RichTextField(_('Тескт'))
