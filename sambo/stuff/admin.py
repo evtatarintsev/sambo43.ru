@@ -13,3 +13,18 @@ class RankAdmin(admin.ModelAdmin):
 @admin.register(Person)
 class PersonAdmin(DisplayableAdmin):
     list_display = ('title', 'rank', 'status')
+    fieldsets = (
+        (None, {
+            "fields": ["title", 'rank', 'photo', 'content'],
+        }),
+
+        (_("Meta data"), {
+            "fields": ["_meta_title", "slug",
+                       ("description", "gen_description"),
+                       "keywords", "in_sitemap"],
+            "classes": ("collapse-closed",)
+        }),
+        ('Настройки публикации', {
+            'fields': ["status", ("publish_date", "expiry_date")]
+        })
+    )
