@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static mezzanine_tags %}
+{% load static thumbnail %}
 
 {% block content %}
 <section class="news__main">
@@ -8,8 +8,8 @@
         {% for blog_post in blog_posts.object_list %}
         <a class="news__item" href="{{ blog_post.get_absolute_url }}">
             {% if blog_post.featured_image %}
-                {% thumbnail blog_post.featured_image.url 320 180 as thumb %}
-                <img src="{{ MEDIA_URL }}{{ thumb }}">
+                {% thumbnail blog_post.featured_image "320x180" crop="center" as thumb %}
+                <img src="{{ thumb.url }}">
             {% else %}
                 <img src="{% static "images/post_no_image_320x180.png" %}">
             {% endif %}
