@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static mezzanine_tags %}
+{% load static thumbnail %}
 
 
 
@@ -22,27 +22,17 @@
             {{ blog_post.content|safe }}
         </div>
 
+        {% if blog_post.gallery %}
         <div class="news__detail__gallery">
+            {% for image in blog_post.gallery.images.all|slice:":6" %}
             <div class="news__detail__gallery__item">
-                <img src="../images/temp/news_detail_galery.png" alt="">
+                {% thumbnail image.file "140x90" crop="center" as thumb %}
+                <img src="{{ thumb.url }}">
             </div>
-            <div class="news__detail__gallery__item">
-                <img src="../images/temp/news_detail_galery.png" alt="">
-            </div>
-            <div class="news__detail__gallery__item">
-                <img src="../images/temp/news_detail_galery.png" alt="">
-            </div>
-            <div class="news__detail__gallery__item">
-                <img src="../images/temp/news_detail_galery.png" alt="">
-            </div>
-            <div class="news__detail__gallery__item">
-                <img src="../images/temp/news_detail_galery.png" alt="">
-            </div>
-            <div class="news__detail__gallery__item">
-                <img src="../images/temp/news_detail_galery.png" alt="">
-            </div>
+            {% endfor %}
+        <a href="{{ blog_post.gallery.get_absolute_url }}">Все изображения</a>
         </div>
-
+        {% endif %}
     </div>
 
 

@@ -1,8 +1,11 @@
+from copy import deepcopy
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from mezzanine.pages.admin import PageAdmin
 from mezzanine.core.admin import TabularDynamicInlineAdmin
+from mezzanine.blog.admin import BlogPostAdmin
+from mezzanine.blog.models import BlogPost
 
 from .models import HomePage
 from .models import Slide
@@ -35,4 +38,14 @@ class HomePageAdmin(PageAdmin):
     )
 
 
+blog_fieldsets = deepcopy(BlogPostAdmin.fieldsets)
+blog_fieldsets[0][1]["fields"].insert(-2, "gallery")
 
+
+class CustomBlogPostAdmin(BlogPostAdmin):
+    fieldsets = blog_fieldsets
+    raw_id_fields = ('gallery', )
+
+
+admin.site.unregister(BlogPost)
+admin.site.register(BlogPost, CustomBlogPostAdmin)
