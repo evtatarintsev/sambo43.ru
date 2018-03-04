@@ -10,15 +10,6 @@ from django.utils.translation import ugettext_lazy as _
 # MEZZANINE SETTINGS #
 ######################
 
-# The following settings are already defined with default values in
-# the ``defaults.py`` module within each of Mezzanine's apps, but are
-# common enough to be put here, commented out, for conveniently
-# overriding. Please consult the settings documentation for a full list
-# of settings Mezzanine implements:
-# http://mezzanine.jupo.org/docs/configuration.html#default-settings
-
-# Controls the ordering and grouping of the admin menu.
-#
 ADMIN_MENU_ORDER = (
     ('Content', (
         'pages.Page',
@@ -52,15 +43,6 @@ PAGE_MENU_TEMPLATES = (
     (2, _('Footer'), 'pages/menus/footer.html'),
 )
 
-# A sequence of fields that will be injected into Mezzanine's (or any
-# library's) models. Each item in the sequence is a four item sequence.
-# The first two items are the dotted path to the model and its field
-# name to be added, and the dotted path to the field class to use for
-# the field. The third and fourth items are a sequence of positional
-# args and a dictionary of keyword args, to use when creating the
-# field instance. When specifying the field class, the path
-# ``django.models.db.`` can be omitted for regular Django model fields.
-#
 EXTRA_MODEL_FIELDS = (
     (
         # Dotted path to field.
@@ -81,8 +63,6 @@ EXTRA_MODEL_FIELDS = (
     # ),
 )
 
-# Setting to turn on featured images for blog posts. Defaults to False.
-#
 BLOG_USE_FEATURED_IMAGE = True
 ADMIN_THUMB_SIZE = '50x50'
 BLOG_POST_PER_PAGE = 10

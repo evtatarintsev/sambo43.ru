@@ -1,1 +1,24 @@
 {% extends "base.html" %}
+
+{% load static thumbnail %}
+
+{% block content %}
+<section class="news__main">
+    <div class="title title-center">{{ page.title }}</div>
+    <div class="news__list">
+        {% for person in person_list %}
+        <a class="news__item" href="{{ person.get_absolute_url }}">
+            {% thumbnail person.photo "320x280" crop="center" as thumb %}
+            <img src="{{ thumb.url }}">
+            <span class="news__title">
+                {{ person.title }}
+                <span class="news__title__description">
+                    <p>{{ person.rank.name }}</p>
+                </span>
+            </span>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+

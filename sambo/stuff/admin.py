@@ -14,9 +14,10 @@ class RankAdmin(admin.ModelAdmin):
 @admin.register(Person)
 class PersonAdmin(DisplayableAdmin):
     list_display = ('title', 'rank', 'status')
+    raw_id_fields = ('gallery', )
     fieldsets = (
         (None, {
-            "fields": ["title", 'position', 'rank', 'photo', 'content'],
+            "fields": ["title", 'position', 'rank', 'photo', 'content', 'gallery'],
         }),
 
         (_("Meta data"), {

@@ -28,7 +28,7 @@ class Person(Displayable):
     rank = models.ForeignKey(Rank, verbose_name=_('Разряд'))
     photo = FileField(_('Фото'), format='Image', upload_to='stuff')
     content = RichTextField(_('Тескт'))
-
+    gallery = models.ForeignKey('media.Gallery', verbose_name=_('Галлерея'), null=True, blank=True)
     class Meta:
         verbose_name = _('Сотрудник')
         verbose_name_plural = _('Сотрудники')
