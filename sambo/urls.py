@@ -10,6 +10,7 @@ admin.autodiscover()
 urlpatterns = [
     url('^admin/', include(admin.site.urls)),
     url('^$', mezzanine.pages.views.page, {'slug': '/'}, name='home'),
+    url('^stuff/', include('sambo.stuff.urls')),
     url('^', include('mezzanine.urls')),
 ]
 
