@@ -1,13 +1,23 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
+
 from mezzanine.pages.models import Page
 from mezzanine.core.fields import FileField
 from mezzanine.core.fields import RichTextField
 from mezzanine.core.models import Orderable
 
+from sambo.stuff.models import Person
+
 
 class HomePage(Page):
     content_title = models.CharField('Заголовок контента', max_length=100)
     content = RichTextField('Текст')
+
+    # Сниппет с тренером или спортсменом
+    person = models.ForeignKey(Person, verbose_name=_('Сотрудник'), null=True, blank=True,
+                               help_text=_('Показывается на странице, если не выбрано, будет показан случайный сотрудник'))
+    person_text = models.CharField(_('Текст на сотруднике'), max_length=50, null=True, blank=True)
+    person_date = models.DateField(_('Дата на сотруднике'), null=True, blank=True)
 
     class Meta:
         verbose_name = 'Главная страница'

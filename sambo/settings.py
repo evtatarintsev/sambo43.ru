@@ -182,6 +182,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
 
     'sambo.content_pages',
+    'sambo.stuff',
 )
 
 MIDDLEWARE_CLASSES = (

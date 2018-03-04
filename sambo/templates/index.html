@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load static blog_tags mezzanine_tags %}
+{% load static blog_tags thumbnail %}
 
 
 {% block content %}
@@ -23,14 +23,19 @@
     </section>
     <section class="main__about">
         <div class="news__left">
-            <div class="news__item news__item-vertical">
-                <img src="{% static "images/temp/favorites1.png" %}" alt="">
-                <div class="news__description news__description-red news__description_text-center">
-                    <span class="news__description__title">Артем Осипенко</span>
-                    <span class="news__description__description">2 место в Первенстве ПФО по Cамбо</span>
-                    <span class="news__description__date">11.01.2017</span>
-                </div>
-            </div>
+
+            {% with person=page.homepage.person text=page.homepage.person_text date=page.homepage.person_date %}
+                {% if person %}
+                    <div class="news__item news__item-vertical">
+                        <img src="{% thumbnail person.photo "320x291" crop="center" %}" alt="{{ person.title }}">
+                        <div class="news__description news__description-red news__description_text-center">
+                            <span class="news__description__title">{{ person.title }}</span>
+                            <span class="news__description__description">{{ text|default:person.rank.name }}</span>
+                            <span class="news__description__date">{{ date|date:"d.m.Y" }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endwith %}
         </div>
         <div class="main__about__text">
             <h1 class="title title-left">{{ page.homepage.content_title }}</h1>
