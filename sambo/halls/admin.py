@@ -12,7 +12,7 @@ class PersonAdmin(DisplayableAdmin):
     filter_horizontal = ('coaches', )
     fieldsets = (
         (None, {
-            "fields": ["title", 'address', 'phone_no', 'photo', 'content', 'gallery', 'coaches'],
+            "fields": ["title", 'address', 'phone_no', 'photo', 'content', 'allow_comments', 'gallery', 'coaches'],
         }),
 
         (_("Meta data"), {

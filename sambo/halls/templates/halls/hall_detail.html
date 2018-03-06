@@ -34,8 +34,17 @@
         </div>
 
     {% if hall_pos %}
-    <div id="map"></div>
+        <div id="map"></div>
     {% endif %}
+
+    {% if hall.allow_comments %}
+        <div id="vk_comments"></div>
+        <script type="text/javascript">
+            VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+        </script>
+    {% endif %}
+
+
     </div>
 </section>
     <style>

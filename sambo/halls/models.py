@@ -14,6 +14,7 @@ class Hall(Displayable):
     content = RichTextField(_('Текст'))
     gallery = models.ForeignKey('media.Gallery', verbose_name=_('Галлерея'), null=True, blank=True)
     coaches = models.ManyToManyField('stuff.Person', verbose_name=_('Тренера'), blank=True)
+    allow_comments = models.BooleanField(_('Разрешить комментарии'), default=True)
 
     class Meta:
         verbose_name = _('Зал')
