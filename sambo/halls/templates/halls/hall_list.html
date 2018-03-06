@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static thumbnail %}
+
+{% block content %}
+<section class="news__main">
+    <div class="title title-center">Залы</div>
+    <div class="news__list">
+        {% for hall in hall_list %}
+        <a class="news__item" href="{{ hall.get_absolute_url }}">
+            {% thumbnail hall.photo "320x280" crop="center" as thumb %}
+            <img src="{{ thumb.url }}">
+            <span class="news__title">
+                {{ hall.title }}
+                <span class="news__title__description">
+                    <p>{{ hall.address }}</p>
+                </span>
+            </span>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+

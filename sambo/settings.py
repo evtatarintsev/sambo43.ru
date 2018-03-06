@@ -18,6 +18,7 @@ ADMIN_MENU_ORDER = (
         'media.Gallery',
         'stuff.Person',
         'stuff.Rank',
+        'halls.Hall',
      )),
     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting", "auth.User", "auth.Group",)),
 )
@@ -169,6 +170,7 @@ INSTALLED_APPS = (
     'sambo.content_pages',
     'sambo.stuff',
     'sambo.media',
+    'sambo.halls',
 )
 
 MIDDLEWARE_CLASSES = (
