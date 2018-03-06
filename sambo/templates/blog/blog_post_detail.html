@@ -33,6 +33,12 @@
         <a href="{{ blog_post.gallery.get_absolute_url }}">Все изображения</a>
         </div>
         {% endif %}
+
+    <div id="vk_comments"></div>
+    <script type="text/javascript">
+        VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+    </script>
+
     </div>
 
 
