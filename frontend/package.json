@@ -2,6 +2,7 @@
   "name": "sambo",
   "version": "0.0.1",
   "devDependencies": {
+    "@fancyapps/fancybox": "^3.2.5",
     "@types/jquery": "^2.0.41",
     "air-datepicker": "^2.2.3",
     "autoprefixer": "^6.7.7",
@@ -18,7 +19,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.10.1",
     "html-loader": "^0.4.5",
-    "jquery": "^3.1.1",
+    "jquery": "^3.3.1",
     "jquery-ui": "^1.12.1",
     "moment": "^2.18.1",
     "node-sass": "^4.5.0",

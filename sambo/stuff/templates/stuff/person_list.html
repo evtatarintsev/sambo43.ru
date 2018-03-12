@@ -7,16 +7,16 @@
     <div class="title title-center">{{ page.title }}</div>
     <div class="news__list">
         {% for person in person_list %}
-        <a class="news__item" href="{{ person.get_absolute_url }}">
-            {% thumbnail person.photo "320x280" crop="center" as thumb %}
-            <img src="{{ thumb.url }}">
-            <span class="news__title">
-                {{ person.title }}
-                <span class="news__title__description">
-                    <p>{{ person.rank.name }}</p>
-                </span>
-            </span>
-        </a>
+            <div class="news__item news__item-vertical" href="{{ person.get_absolute_url }}">
+                {% thumbnail person.photo "320x280" crop="center" as thumb %}
+                <img src="{{ thumb.url }}">
+                <div class="news__description news__description-red news__description_text-center">
+                    <span class="news__description__title">
+                        <a href="{% url "person_detail" slug=person.slug %}">{{ person.title }}</a>
+                    </span>
+                    <span class="news__description__description">{{ text|default:person.rank.name }}</span>
+                </div>
+            </div>
         {% endfor %}
     </div>
 </section>
