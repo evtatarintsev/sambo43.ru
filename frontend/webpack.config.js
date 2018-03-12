@@ -48,8 +48,12 @@ module.exports = {
 
         new ExtractTextPlugin({filename: "css/styles.css", disable: false, allChunks: true }),
         new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
+            'jQuery': 'jquery',
+            'window.jQuery': 'jquery',
+            'jquery': 'jquery',
+            'window.jquery': 'jquery',
+            '$': 'jquery',
+            'window.$': 'jquery'
         })
     ]
 }

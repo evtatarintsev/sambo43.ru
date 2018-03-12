@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $('.fancybox').fancybox();
+
     $('.index-slider-box').slick({
         infinite: true,
         dots: true,
@@ -44,5 +46,6 @@ $(document).ready(function(){
 
         return false;
     });
+
 
 });
