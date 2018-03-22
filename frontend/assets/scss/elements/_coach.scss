@@ -1,0 +1,58 @@
+.coach{
+    &__list{
+        text-align: left;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+
+    &__item{
+        width: 320px;
+        height: 380px;
+        display: inline-block;
+        background: #eaeaea;
+        padding: 4px;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        overflow: hidden;
+        margin-right: 20px;
+        margin-bottom: 20px;
+
+        &:nth-child(3n){
+            margin-right: 0px;
+        }
+        
+
+        &:hover{
+            background: #ff3131;
+            color: white;
+        }
+
+        &__img{
+            width: 310px;
+            height: 280px;
+            display: block;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        &__description{
+            font-family: $panton;
+            font-size: 20px;
+            font-weight: 900;
+            line-height: 20px;
+            text-transform: uppercase;
+
+            &-small{
+                font-size: 13px;
+                font-family: $roboto;
+                font-weight: 700;
+                line-height: 20px;
+                text-transform: none;
+                display: block;
+            }
+        }
+    }
+}
