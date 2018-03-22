@@ -10,20 +10,28 @@
 
 {% block content %}
 <section class="news__main">
-    <div class="title title-center">{{ person.title }}</div>
-    <div class="news__detail">
-        <h1>{{ blog_post.title|upper }}</h1>
-        <div class="news__detail__text">
-            {{ person.content|safe }}
-        </div>
-
-        {% if person.gallery %}
-            <div class="news__detail__gallery">
-                {% for image in person.gallery.images.all|slice:":6" %}
-                <div class="news__detail__gallery__item">
-                    {% thumbnail image.file "140x90" crop="center" as thumb %}
+    <div class="title title-center">Тренеры</div>
+    <div class="coach__detail">
+        <h1>{{ person.title }}</h1>
+        <h2>{{ person.rank.name }}</h2>
+        <div class="coach__detail__content">
+            <div class="coach__detail__content-left">
+                <div class="coach__detail__photo">
+                    {% thumbnail person.photo "310x370" crop="center" as thumb %}
                     <img src="{{ thumb.url }}">
                 </div>
+            </div>
+            <div class="coach__detail__content-right">
+                {{person.content | safe}}
+            </div>
+        </div>
+        {% if person.gallery %}
+            <div class="coach__detail__gallery">
+                {% for image in person.gallery.images.all|slice:":6" %}
+                <a class="coach__detail__gallery__item fancybox" data-fancybox="gallery" href="{{ image.file.url }}">
+                    {% thumbnail image.file "140x90" crop="center" as thumb %}
+                    <img src="{{ thumb.url }}">
+                </a>
                 {% endfor %}
             </div>
         {% endif %}

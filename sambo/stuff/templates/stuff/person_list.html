@@ -5,18 +5,20 @@
 {% block content %}
 <section class="news__main">
     <div class="title title-center">{{ page.title }}</div>
-    <div class="news__list">
+    <div class="coach__list">
         {% for person in person_list %}
-            <div class="news__item news__item-vertical" href="{{ person.get_absolute_url }}">
-                {% thumbnail person.photo "320x280" crop="center" as thumb %}
-                <img src="{{ thumb.url }}">
-                <div class="news__description news__description-red news__description_text-center">
-                    <span class="news__description__title">
-                        <a href="{% url "person_detail" slug=person.slug %}">{{ person.title }}</a>
-                    </span>
-                    <span class="news__description__description">{{ text|default:person.rank.name }}</span>
+            <a class="coach__item" href="{% url "person_detail" slug=person.slug %}">
+                <div class="coach__item__img">
+                    {% thumbnail person.photo "310x280" crop="center" as thumb %}
+                    <img src="{{ thumb.url }}">
                 </div>
-            </div>
+                <div class="coach__item__description">
+                    <span class="coach__item__description">
+                       {{ person.title }}
+                    </span>
+                    <span class="coach__item__description coach__item__description-small">{{ text|default:person.rank.name }}</span>
+                </div>
+            </a>
         {% endfor %}
     </div>
 </section>
