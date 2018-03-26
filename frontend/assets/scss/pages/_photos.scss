@@ -1,7 +1,21 @@
 .photo{
 
     &__list{
+        h1{
+            color: $black;
+            font-family: $panton;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 20px;
+            letter-spacing: 0.96px;
+            text-transform: uppercase;
+            text-align: left;
+        }
 
+        &__date{
+            text-align: left;
+            margin-bottom: 20px;
+        }
 
     }
 

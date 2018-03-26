@@ -145,10 +145,21 @@
                 border: 5px solid $light-gray;
                 margin: 15px;
                 margin-left: 0;
+                max-width: 100%;
 
                 &:first-child{
                     margin-top: 0;
                 }
+            }
+        }
+
+        &__img{
+            text-align: center;
+
+            img{
+                float: none;
+                display: block;
+                margin: 0 auto;
             }
         }
 
