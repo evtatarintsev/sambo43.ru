@@ -4,8 +4,12 @@
 
 {% block content %}
 <section class="news__main">
-    <div class="title title-center">{{ gallery.title }}</div>
+    <div class="title title-center">Фото</div>
+
     <div class="photo__list">
+        <h1>{{ gallery.title }}</h1>
+        <div class="news__detail__date photo__list__date">{{ gallery.publish_date|date:"d E Y года" }}</div>
+
         {% for image in gallery.images.all %}
         <a class="photo__item fancybox" data-fancybox="gallery" href="{{ image.file.url }}">
             {% thumbnail image.file "230x230" crop="center" as thumb %}
