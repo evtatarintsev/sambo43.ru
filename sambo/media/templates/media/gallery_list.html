@@ -9,7 +9,7 @@
         {% for gallery in gallery_list %}
         <a class="photo__item photo__item-album" href="{{ gallery.get_absolute_url }}">
             {% thumbnail gallery.cover.file "230x230" crop="center" as thumb %}
-            <img src="{{ thumb.url }}">
+            <span class="photo__item__img"><img src="{{ thumb.url }}"></span>
             <span class="photo__item__title">
                 {{ gallery.title }}
             </span>
