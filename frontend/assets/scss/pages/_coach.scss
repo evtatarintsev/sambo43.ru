@@ -111,12 +111,13 @@
 
         &__gallery{
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: 20px;
 
             &__item{
                 display: inline-block;
                 border: 4px solid $light-gray2;
+                margin: 0 5px;
 
                 &:hover{
                     border: 4px solid $blue;
