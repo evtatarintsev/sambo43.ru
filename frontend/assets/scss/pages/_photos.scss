@@ -26,24 +26,11 @@
         text-decoration: none;
         text-align: center;
         margin-right: 20px;
+        vertical-align: top;
 
         &:nth-child(4n), &:last-child{
             margin-right: 0;
         }
-
-
-        &-album{
-            img{
-                border: 4px solid $light-gray2;
-            }
-
-            &:hover{
-                img{
-                    border: 4px solid $blue2;
-                }
-            }
-        }
-
 
 
         &__title{
@@ -56,6 +43,17 @@
             font-family: $panton;
         }
 
+        &__img{
+            display: inline-block;
+            width: 238px;
+            height: 238px;
+            border: 4px solid $light-gray2;
+            margin-bottom: 10px;
+
+            &:hover{
+                border: 4px solid $blue2;
+            }
+        }
 
         &__dates{
             font-size: 12px;

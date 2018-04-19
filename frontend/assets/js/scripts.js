@@ -28,6 +28,14 @@ $(document).ready(function(){
         appendDots: '.index-slider-dots'
     });
 
+    $('.js-slider-preson-detail').slick({
+        infinite: true,
+        slidesToShow: 5,
+        dots: false,
+        slidesToScroll: 5,
+        arrows: true,
+    });
+
 
     $('.catalog-category').click(function(){
        $(this).parent().toggleClass('_active');
