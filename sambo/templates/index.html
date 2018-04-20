@@ -26,14 +26,14 @@
 
             {% with person=page.homepage.person text=page.homepage.person_text date=page.homepage.person_date %}
                 {% if person %}
-                    <div class="news__item news__item-vertical">
+                    <a class="news__item news__item-vertical" href="{% url "person_detail" slug=person.slug %}">
                         <img src="{% thumbnail person.photo "320x291" crop="center" %}" alt="{{ person.title }}">
                         <div class="news__description news__description-red news__description_text-center">
-                            <span class="news__description__title"><a href="{% url "person_detail" slug=person.slug %}">{{ person.title }}</a></span>
+                            <span class="news__description__title"  >{{ person.title }}</span>
                             <span class="news__description__description">{{ text|default:person.rank.name }}</span>
                             <span class="news__description__date">{{ date|date:"d.m.Y" }}</span>
                         </div>
-                    </div>
+                    </a>
                 {% endif %}
             {% endwith %}
         </div>

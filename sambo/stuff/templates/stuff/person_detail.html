@@ -26,12 +26,14 @@
             </div>
         </div>
         {% if person.gallery %}
-            <div class="coach__detail__gallery">
-                {% for image in person.gallery.images.all|slice:":6" %}
-                <a class="coach__detail__gallery__item fancybox" data-fancybox="gallery" href="{{ image.file.url }}">
-                    {% thumbnail image.file "140x90" crop="center" as thumb %}
-                    <img src="{{ thumb.url }}">
-                </a>
+            <div class="coach__detail__gallery js-slider-preson-detail">
+                {% for image in person.gallery.images.all %}
+                <span>
+                    <a class="coach__detail__gallery__item fancybox" data-fancybox="gallery" href="{{ image.file.url }}">
+                        {% thumbnail image.file "140x90" crop="center" as thumb %}
+                        <img src="{{ thumb.url }}">
+                    </a>
+                </span>
                 {% endfor %}
             </div>
         {% endif %}
