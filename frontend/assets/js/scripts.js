@@ -30,9 +30,9 @@ $(document).ready(function(){
 
     $('.js-slider-preson-detail').slick({
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 6,
         dots: false,
-        slidesToScroll: 5,
+        slidesToScroll: 6,
         arrows: true,
     });
 

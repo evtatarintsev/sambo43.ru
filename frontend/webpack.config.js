@@ -22,7 +22,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.(jpg|png|svg)$/i,
+                test: /\.(jpg|png|svg|gif)$/i,
                 loader: "file-loader?name=[path][name].[ext]",
             },
             {
