@@ -1,0 +1,13 @@
+.slick{
+    &-prev{
+        &:before{
+            color: $blue;
+        }
+    }
+
+    &-next{
+        &:before{
+            color: $blue;
+        }
+    }
+}

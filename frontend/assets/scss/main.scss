@@ -1,9 +1,10 @@
 //Vendor
 @import 'vendor/normalize';
 @import 'vendor/breakpoint';
-@import 'vendor/fancybox/jquery.fancybox.css';
+@import "../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css";
+//@import 'vendor/fancybox/jquery.fancybox.css';
 @import "../../node_modules/slick-carousel/slick/slick";
-//@import "../../node_modules/slick-carousel/slick/slick-theme";
+@import "../../node_modules/slick-carousel/slick/slick-theme";
 
 //Base
 @import 'base/vars';
@@ -18,6 +19,7 @@
 @import "elements/footer";
 @import "elements/title";
 @import "elements/news";
+@import "elements/slick";
 
 //Pages
 @import 'pages/main';
