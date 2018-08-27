@@ -19,12 +19,12 @@
             <img src="{{ thumb.url }}">
         </div>
         {% if hall.gallery %}
-            <div class="news__detail__gallery">
-                {% for image in hall.gallery.images.all|slice:":6" %}
-                <div class="news__detail__gallery__item">
+            <div class="news__detail__gallery js-slider-halls-detail">
+                {% for image in hall.gallery.images.all %}
+                <a class="news__detail__gallery__item" data-fancybox="gallery" href="{{ image.file.url }}">
                     {% thumbnail image.file "140x90" crop="center" as thumb %}
                     <img src="{{ thumb.url }}">
-                </div>
+                </a>
                 {% endfor %}
             </div>
         {% endif %}
@@ -40,7 +40,7 @@
 </section>
     <style>
         #map {
-            width: 100%; height: 300px; padding: 0; margin: 0;
+            width: 100%; height: 300px; padding: 0; margin: 0; margin: 25px 0;
         }
     </style>
 
