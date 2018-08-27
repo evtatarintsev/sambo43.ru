@@ -36,6 +36,14 @@ $(document).ready(function(){
         arrows: true,
     });
 
+    $('.js-slider-halls-detail').slick({
+        infinite: true,
+        slidesToShow: 6,
+        dots: false,
+        slidesToScroll: 6,
+        arrows: true,
+    });
+
 
     $('.catalog-category').click(function(){
        $(this).parent().toggleClass('_active');
