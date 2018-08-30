@@ -1,0 +1,39 @@
+.slider-main{
+    position: relative;
+}
+
+.index-slider-dots{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    text-align: center;
+
+    .slick-dots{
+        text-align: center;
+        position: relative;
+        bottom: auto;
+
+        li{
+            display: inline;
+        }
+
+        a{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+            box-shadow: 0 0 2px 1px #ccc;
+        }
+
+
+        .slick-active{
+            a{
+                background: white;
+            }
+        }
+
+    }
+
+}
