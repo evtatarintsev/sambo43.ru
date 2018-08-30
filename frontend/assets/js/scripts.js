@@ -11,8 +11,8 @@ $(document).ready(function(){
         },
         slidesToScroll: 1,
         arrows: false,
-        fade: true,
-        appendDots: '.index-slider-dots'
+        appendDots: '.index-slider-dots',
+        auto: true,
     });
 
     $('.slider-box').slick({
