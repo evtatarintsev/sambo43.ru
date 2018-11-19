@@ -5,13 +5,14 @@
 
 {% block content %}
     <section class="slider-main">
-        <div class="slider-main__list">
+        <div class="slider-main__list index-slider-box">
             {% for slide in page.homepage.slider %}
                 {% if slide.link %}<a href="{{ slide.link }}">{% endif %}
                 <img src="{{ slide.image.url }}" alt="" class="slider-main__item">
                 {% if slide.link %}</a>{% endif %}
             {% endfor %}
         </div>
+        <div class="index-slider-dots"></div>
     </section>
     <section class="news__main">
         <div class="title title-center">Новости</div>
