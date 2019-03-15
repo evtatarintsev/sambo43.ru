@@ -4,6 +4,10 @@
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
+
+        @include media(phone){
+            flex-direction: column;
+        }
     }
 
 
@@ -23,7 +27,14 @@
         &:nth-child(3n){
             margin-right: 0px;
         }
-        
+
+
+        @include media(phone){
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            margin-bottom: 20px;
+        }
 
         &:hover{
             background: $red;
@@ -68,6 +79,10 @@
             letter-spacing: 0.96px;
             text-transform: uppercase;
             text-align: left;
+
+            @include media(phone){
+                font-size: 18px;
+            }
         }
 
         h2{
@@ -86,15 +101,28 @@
             text-align: left;
             margin-top: 20px;
 
+            @include media(phone){
+                display: block;
+                margin: 0;
+            }
+
             &-left{
                 width: 320px;
                 flex-basis: 320px;
                 flex-shrink: 0;
                 overflow: hidden;
+
+                @include media(phone){
+                    width: 100%;
+                }
             }
 
             &-right{
                 padding-left: 30px;
+
+                @include media(phone){
+                    padding: 0;
+                }
             }
         }
 

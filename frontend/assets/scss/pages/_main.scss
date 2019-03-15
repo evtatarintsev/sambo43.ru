@@ -14,11 +14,19 @@
         @include centered();
         margin-bottom: 50px;
 
+        @include media(phone){
+            margin: 0;
+        }
+
         &__text{
             margin-left: 360px;
             font-size: 14px;
             font-weight: 300;
             line-height: 25px;
+
+            @include media(phone){
+                margin: 0;
+            }
         }
     }
 }
