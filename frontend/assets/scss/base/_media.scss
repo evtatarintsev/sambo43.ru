@@ -1,0 +1,8 @@
+$queries: (
+  'tablet': 1023px,
+  'phone': 479px,
+) !default;
+
+@mixin media ($media) {
+    @media (max-width: map-get($queries, $media)) { @content; }
+}

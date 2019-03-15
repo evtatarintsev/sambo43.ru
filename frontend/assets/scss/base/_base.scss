@@ -25,6 +25,11 @@ body {
     min-height: 100%;
     padding-bottom: 190px;
     min-height: 100%;
+
+    @include media(phone){
+        overflow-x: hidden;
+        margin: 0 10px;
+    }
 }
 
 .page-body{

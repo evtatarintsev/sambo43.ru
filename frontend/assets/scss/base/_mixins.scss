@@ -21,4 +21,8 @@
     width: 1000px;
     display: block;
     margin: 0 auto;
+
+    @include media(phone){
+        width: 100%;
+    }
 }

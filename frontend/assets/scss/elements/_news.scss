@@ -6,10 +6,20 @@
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
+
+        @include media(phone){
+            flex-direction: row;
+            justify-content: center;
+        }
     }
     
     &__left{
         float: left;
+
+        @include media(phone){
+            float: none;
+            text-align: center;
+        }
     }
 
     &__item{
@@ -21,7 +31,6 @@
         &:nth-child(3n){
             margin-right: 0;
         }
-
         &:hover{
             #{$news}__description, #{$news}__title{
                 background: $blue-opacity;
@@ -45,8 +54,15 @@
             }
         }
 
+        @include media(phone){
+            margin-right: 0;
+            display: block;
+            width: 100%;
+        }
+
         img{
             display: block;
+            width: 100%;
         }
 
         &-vertical{

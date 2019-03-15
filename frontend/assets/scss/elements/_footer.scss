@@ -2,6 +2,11 @@
     height: 190px;
     margin-top: -190px;
 
+    @include media(phone){
+        overflow-x: hidden;
+        margin: 0 10px;
+    }
+
     &__info{
         height: 130px;
         @include centered;
@@ -11,17 +16,31 @@
         align-items: center;
         justify-content: space-between;
 
+        @include media(phone){
+            height: auto;
+        }
+
         &__fill{
             flex-grow: 1;
         }
 
         &__logo{
             float: left;
+
+            @include media(phone){
+                display: none;
+            }
         }
 
         &__contacts{
             width: 240px;
             text-align: right;
+
+            @include media(phone){
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
 
         }
 

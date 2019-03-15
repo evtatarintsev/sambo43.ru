@@ -8,6 +8,12 @@
         align-items: center;
         height: 120px;
 
+        @include media(phone){
+            height: auto;
+            flex-direction: column;
+
+        }
+
         &__text{
             color: $red;
             font-family: $panton;
@@ -15,6 +21,20 @@
             font-weight: 300;
             line-height: 35px;
             text-transform: uppercase;
+
+
+            @include media(phone){
+                font-size: 20px;
+                margin: 7px 0;
+            }
+        }
+
+        &__img{
+            @include media(phone){
+                img{
+                    width: 50px;
+                }
+            }
         }
     }
 }

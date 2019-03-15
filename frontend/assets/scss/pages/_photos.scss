@@ -10,6 +10,10 @@
             letter-spacing: 0.96px;
             text-transform: uppercase;
             text-align: left;
+
+            @include media(phone){
+                font-size: 18px;
+            }
         }
 
         &__date{
@@ -32,6 +36,11 @@
             margin-right: 0;
         }
 
+        @include media(phone){
+            margin-right: 0;
+            display: block;
+            width: 100%;
+        }
 
         &__title{
             font-size: 14px;

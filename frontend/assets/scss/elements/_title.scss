@@ -8,6 +8,10 @@
     margin-bottom: 30px;
     margin-top: 0;
 
+    @include media(phone){
+        font-size: 24px;
+    }
+
     &-center{
 
         &:before {
@@ -17,6 +21,13 @@
             content: " ";
             display: inline-block;
             margin-right: 27px;
+
+            @include media(phone){
+                background-size: contain;
+                width: 56px;
+                height: 17px;
+                margin-right: 17px;
+            }
         }
 
         &:after {
@@ -26,12 +37,25 @@
             height: 24px;
             content: " ";
             margin-left: 27px;
+
+            @include media(phone){
+                background-size: contain;
+                width: 56px;
+                height: 17px;
+                margin-left: 17px;
+
+            }
         }
 
     }
 
     &-left{
         margin-bottom: 15px;
+
+        @include media(phone){
+            font-size: 24px;
+        }
+
         &:after {
             background: url("../../images/icon-title-right.png") no-repeat center;
             display: inline-block;
@@ -39,6 +63,14 @@
             height: 24px;
             content: " ";
             margin-left: 27px;
+
+            @include media(phone){
+                background-size: contain;
+                width: 56px;
+                height: 17px;
+                margin-left: 17px;
+
+            }
         }
 
         &+p{
